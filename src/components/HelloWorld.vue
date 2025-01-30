@@ -11,7 +11,7 @@ import {liff} from "@line/liff";
  console.log("mount")
     try {
       // * Config Line Liff
-      await liff.init({ liffId: "2006835240-4exWlE8E"})
+      await liff.init({ liffId: "2006835240-4exWlE8E", withLoginOnExternalBrowser: true})
       // ^ Check Line Liff Login ?
       if (liff.isLoggedIn()) {
         const profile = await liff.getProfile()
@@ -26,15 +26,11 @@ import {liff} from "@line/liff";
 
 function share() {
  console.log("share")
-  if (liff.isApiAvailable("shareTargetPicker")) {
      liff.shareTargetPicker([{
       "type": "text",
       "text": "Hello, world"
     }], {
       isMultiple: true,
     }).then(res => alert(res)).catch(err => alert(err))
-  }else{
-    console.log("shareTargetPicker not allow")
-  }
 }
 </script>
