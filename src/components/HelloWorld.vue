@@ -21,7 +21,6 @@ import {liff} from "@line/liff";
       }
     } catch (e) {
       console.log("error login => ", e)
-
     }
 })
 
