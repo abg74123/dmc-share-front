@@ -16,10 +16,10 @@ import {liff} from "@line/liff";
       if (liff.isLoggedIn()) {
         const profile = await liff.getProfile()
         console.log("profile => ", profile)
-           await liff.sendMessages({
+           await liff.sendMessages([{
     "type": "text",
     "text": "Hello, world"
-})
+}])
         this.loading = false
       } else {
         liff.login()
