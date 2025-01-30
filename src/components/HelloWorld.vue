@@ -1,5 +1,5 @@
 <template>
-  <button>แชร์เลย!!!!!!!!</button>
+  <button @click="share()">แชร์เลย!!!!!!!!</button>
 </template>
 
 <script setup>
@@ -16,10 +16,7 @@ import {liff} from "@line/liff";
       if (liff.isLoggedIn()) {
         const profile = await liff.getProfile()
         console.log("profile => ", profile)
-           await liff.sendMessages([{
-    "type": "text",
-    "text": "Hello, world"
-}])
+
         this.loading = false
       } else {
         liff.login()
@@ -30,4 +27,11 @@ import {liff} from "@line/liff";
     }
 })
 
+async function share() {
+ console.log("share")
+  await liff.sendMessages([{
+        "type": "text",
+        "text": "Hello, world"
+    }])
+}
 </script>
