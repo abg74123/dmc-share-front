@@ -32,7 +32,7 @@ function share() {
       "text": "Hello, world"
     }], {
       isMultiple: true,
-    }).then().catch(err => alert(err))
+    }).then(res => alert(res)).catch(err => alert(err))
   }
 }
 </script>
