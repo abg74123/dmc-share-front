@@ -24,15 +24,15 @@ import {liff} from "@line/liff";
     }
 })
 
-async function share() {
+function share() {
  console.log("share")
   if (liff.isApiAvailable("shareTargetPicker")) {
-    await liff.shareTargetPicker([{
+     liff.shareTargetPicker([{
       "type": "text",
       "text": "Hello, world"
     }], {
       isMultiple: true,
-    })
+    }).then().catch(err => alert(err))
   }
 }
 </script>
