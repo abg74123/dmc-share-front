@@ -33,6 +33,8 @@ function share() {
     }], {
       isMultiple: true,
     }).then(res => alert(res)).catch(err => alert(err))
+  }else{
+    console.log("shareTargetPicker not allow")
   }
 }
 </script>
