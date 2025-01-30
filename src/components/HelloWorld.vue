@@ -16,8 +16,6 @@ import {liff} from "@line/liff";
       if (liff.isLoggedIn()) {
         const profile = await liff.getProfile()
         console.log("profile => ", profile)
-
-        this.loading = false
       } else {
         liff.login()
       }
@@ -29,9 +27,11 @@ import {liff} from "@line/liff";
 
 async function share() {
  console.log("share")
-  await liff.sendMessages([{
+  await liff.shareTargetPicker([{
         "type": "text",
         "text": "Hello, world"
-    }])
+    }], {
+      isMultiple: true,
+    })
 }
 </script>
