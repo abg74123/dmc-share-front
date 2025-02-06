@@ -26,6 +26,7 @@ import {liff} from "@line/liff";
 
 async function share() {
  console.log("share")
+   try{
      await liff.shareTargetPicker([
        {
          "type": "flex",
@@ -180,6 +181,11 @@ async function share() {
      ], {
       isMultiple: true,
     })
+     await liff.closeWindow()
+   }catch (e) {
+     console.log("error => ".e)
+     await liff.closeWindow()
+   }
 }
 </script>
 
