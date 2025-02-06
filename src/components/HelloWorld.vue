@@ -1,5 +1,5 @@
 <template>
-  <button @click="share()">แชร์เลย!!!!!!!!</button>
+  <button class="btn-share" @click="share()">SHARE <img class="img-icon" src="../assets/Graphicloads-100-Flat-2-Share-2.256.png" alt=""></button>
 </template>
 
 <script setup>
@@ -70,7 +70,7 @@ async function share() {
               {
                 "type": "text",
                 "text": "โดย",
-                "color": "#aaaaaa",
+                "color": "#AAAAAA",
                 "size": "sm"
               },
               {
@@ -90,7 +90,7 @@ async function share() {
               {
                 "type": "text",
                 "text": "HN",
-                "color": "#aaaaaa",
+                "color": "#AAAAAA",
                 "size": "sm"
               },
               {
@@ -110,7 +110,7 @@ async function share() {
               {
                 "type": "text",
                 "text": "วันที่",
-                "color": "#aaaaaa",
+                "color": "#AAAAAA",
                 "size": "sm"
               },
               {
@@ -138,10 +138,24 @@ async function share() {
           {
             "type": "text",
             "text": "กรุณากดลงทะเบียนเพื่อรับสิทธิ",
-            "color": "#aaaaaa",
+            "color": "#AAAAAA",
             "wrap": true,
             "margin": "none",
             "size": "xs"
+          },
+          {
+            "type": "separator",
+            "margin": "md"
+          },
+          {
+            "type": "button",
+            "action": {
+              "type": "uri",
+              "label": "ติดต่อแอดมินโดยใช้รหัสแนะนำ",
+              "uri": "https://line.me/R/oaMessage/%40doctormekclinic/?REFERRAL_PRO%20HN68999"
+            },
+            "style": "primary",
+            "color": "#F2AC00"
           },
           {
             "type": "separator",
@@ -155,7 +169,7 @@ async function share() {
               "uri": "https://appoint.amara-clinic.com/test"
             },
             "style": "primary",
-            "color": "#202c74"
+            "color": "#202C74"
           }
         ]
       }
@@ -168,3 +182,30 @@ async function share() {
     })
 }
 </script>
+
+
+<style>
+  .btn-share{
+    display: flex;
+    gap:15px;
+    align-items: center;
+    margin: auto;
+    cursor: pointer;
+    font-size: 30px;
+    padding:10px 30px;
+    border:0;
+    border-radius: 10px;
+    color: #FFF;
+    background-color: deepskyblue;
+          transition-duration: 0.5s;
+
+
+  }
+    .btn-share:hover{
+      transition-duration: 0.5s;
+    font-size: 35px;
+  }
+    .img-icon{
+      width: 50px;
+    }
+</style>
